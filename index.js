@@ -17,19 +17,31 @@ const listData = (data) => {
 
   data.forEach((element) => {
     let liElement = document.createElement("li");
-    liElement.innerHTML = `<div>
-                           <h2>${element.title}</h2><button>X</button>
-                           </div>
-                           <p>${element.body}</p>`;
+    liElement.setAttribute("class", "postCard");
+    let postBody = element.body;
+    liElement.innerHTML = `
+                          <span class=cardTitleCont> 
+                           <h2>${
+                             element.title
+                           }</h2><span class="deleteBtnCont"><button class="postDeleteBtn">&#10006;</button></span></span>
+                           <p>${
+                             postBody.charAt(0).toUpperCase() +
+                             postBody.slice(1) +
+                             "."
+                           }</p>
+                         `;
     listContainer.appendChild(liElement);
+
+    let deleteBtn = liElement.querySelector(".postDeleteBtn");
+    deleteBtn.addEventListener("click", () => deletePost(liElement));
   });
   console.log(listContainer);
 };
 
-const searchInput = document.getElementById("search");
+const searchInput = document.getElementById("searchInput");
 
 searchInput.addEventListener("input", (event) => {
-  let query = event.target.value;
+  let query = event.target.value.toLowerCase();
   console.log(query);
   let result = data.filter(
     (post) => post.title.includes(query) || post.body.includes(query)
@@ -38,10 +50,21 @@ searchInput.addEventListener("input", (event) => {
   console.log(result);
 });
 
+const deletePost = (element) => {
+  element.classList.add("slide-out");
+
+  element.addEventListener("animationend", function () {
+    const list = document.querySelector(".list");
+    list.removeChild(element);
+  });
+};
+
 const init = async () => {
   const data = await fetchData();
   console.log(data);
   listData(data);
 };
+
+document.addEventListener("DOMContentLoaded", () => {});
 
 init();

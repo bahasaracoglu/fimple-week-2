@@ -1,0 +1,224 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-style: solid;
+  border-bottom-width: 1px; /* Set your desired border width */
+  border-bottom-color: #888f9f;
+  padding: 2rem;
+}
+.searchContainer {
+  display: flex;
+  justify-items: space-around;
+}
+
+#searchInput {
+  border-style: none;
+  background-color: #f2f3f8;
+  color: #888f9f;
+  padding: 1rem;
+  border-radius: 30px 0 0 30px;
+  outline: none;
+}
+
+.headerButtons {
+  background-color: #f2f3f8;
+  border-style: none;
+}
+#searchButton {
+  border-radius: 0 30px 30px 0;
+  padding-right: 1rem;
+}
+
+.list {
+  background-color: #fff8f6;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-top: 2rem;
+}
+
+.postCard {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  margin: 0 2rem;
+  padding: 1rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.postCard p {
+  background-color: #f7f8fa;
+  padding: 1rem;
+  border-radius: 10px;
+}
+.cardTitleCont {
+  display: flex;
+  justify-content: space-between;
+  align-content: flex-start;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+.cardTitleCont h2 {
+  font-weight: bold;
+  text-transform: capitalize;
+  align-self: center;
+}
+
+.deleteBtnCont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes slideOut {
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+li {
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.slide-out {
+  animation: slideOut 0.3s ease-in-out forwards;
+}
+.postDeleteBtn {
+  background-color: #f7f8fa;
+  border-style: none;
+  border-radius: 50%;
+  height: 30px;
+  min-width: 30px;
+}

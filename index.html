@@ -4,14 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Search</title>
+    <link rel="stylesheet" href="style.css" />
     <script src="./index.js" defer></script>
   </head>
   <body>
-    <header>
-      <label for=""><input type="text" name="search" id="search" /></label>
-      <button>Search</button>
+    <header class="header">
+      <div class="searchContainer">
+        <input type="text" name="search" id="searchInput" />
+        <button class="headerButtons" id="">X</button>
+        <button class="headerButtons" id="searchButton">Search</button>
+      </div>
     </header>
-    <section>
+    <section class="content">
       <ul class="list"></ul>
     </section>
   </body>
