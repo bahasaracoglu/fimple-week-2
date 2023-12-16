@@ -107,6 +107,10 @@ section {
 }
 body {
   line-height: 1;
+  font-family: "Roboto", sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 ol,
 ul {
@@ -133,61 +137,150 @@ table {
   justify-content: center;
   align-items: center;
   border-style: solid;
-  border-bottom-width: 1px; /* Set your desired border width */
-  border-bottom-color: #888f9f;
+  border-bottom-width: 2px;
+  border-bottom-color: #f2f3f8;
   padding: 2rem;
 }
 .searchContainer {
   display: flex;
   justify-items: space-around;
+  width: 100%;
+  justify-content: center;
 }
 
 #searchInput {
   border-style: none;
   background-color: #f2f3f8;
   color: #888f9f;
+  width: 45%;
   padding: 1rem;
   border-radius: 30px 0 0 30px;
   outline: none;
+  max-width: 380px;
+  caret-color: #82b5dc;
+  font-weight: 600;
+}
+
+#searchClear {
+  /* background: url("./x.png");
+  background-color: #f2f3f8;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center; */
+
+  font-size: large;
+  font-weight: 700;
+}
+
+#searchInput:hover,
+#searchClear:hover,
+#searchButton:hover {
+  box-shadow: 0 0 5pt 0.5pt #d3d3d3;
+}
+
+.buttonsContainer {
+  display: flex;
 }
 
 .headerButtons {
   background-color: #f2f3f8;
   border-style: none;
+  color: #82b5dc;
 }
+.headerButtons i {
+  vertical-align: middle;
+}
+.headerButtons i:hover {
+  vertical-align: middle;
+  transform: scale(1.2);
+}
+
 #searchButton {
   border-radius: 0 30px 30px 0;
   padding-right: 1rem;
 }
 
+.content {
+  background: rgb(238, 174, 202);
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(148, 187, 233, 0.6839110644257703) 100%
+  );
+  display: flex;
+  align-items: center; /* Dikeyde ortala */
+  justify-content: center; /* Yatayda ortala */
+  flex: 1;
+}
+
 .list {
-  background-color: #fff8f6;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 1rem;
+  padding: 2rem 2%;
+}
+.notFound {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   gap: 1rem;
-  padding-top: 2rem;
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 350px;
+}
+.notFound img {
+  width: 300px;
+}
+.notFound h2 {
+  padding-top: 1rem;
+  font-size: larger;
+  font-weight: bolder;
+}
+.notFound p {
+  font-size: medium;
+  font-weight: normal;
+  color: #a3a3a3;
+  padding: 0 4rem;
 }
 
 .postCard {
   display: flex;
   flex-direction: column;
   background-color: #ffffff;
-  margin: 0 2rem;
   padding: 1rem;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 220px;
+  max-width: 270px;
 }
 .postCard p {
   background-color: #f7f8fa;
+  font-weight: 300;
   padding: 1rem;
   border-radius: 10px;
+  height: 160px;
 }
+
+.postCard:hover {
+  background-color: #e5eeff;
+  transform: scale(1.05);
+}
+
 .cardTitleCont {
   display: flex;
   justify-content: space-between;
   align-content: flex-start;
   margin-bottom: 1rem;
   gap: 1rem;
+  height: 55px;
 }
 .cardTitleCont h2 {
   font-weight: bold;
@@ -221,4 +314,25 @@ li {
   border-radius: 50%;
   height: 30px;
   min-width: 30px;
+}
+
+.postDeleteBtn:hover {
+  background-color: #dbdde1;
+  transform: scale(1.1);
+}
+
+/* Tablet Ekranlar (768px - 991px) */
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+}
+
+@media only screen and (min-width: 1300px) {
+  .list {
+    padding: 2rem 5%;
+  }
+}
+@media only screen and (min-width: 1700px) {
+  .list {
+    padding: 2rem 10%;
+  }
 }

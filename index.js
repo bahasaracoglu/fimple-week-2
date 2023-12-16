@@ -39,6 +39,14 @@ const listData = (data) => {
 };
 
 const searchInput = document.getElementById("searchInput");
+const searchBtn = document.getElementById("searchButton");
+const searchClearBtn = document.getElementById("searchClear");
+
+searchInput.addEventListener("mouseover", () => {
+  searchBtn.mouseover();
+
+  searchClearBtn.mouseover();
+});
 
 searchInput.addEventListener("input", (event) => {
   let query = event.target.value.toLowerCase();
@@ -46,8 +54,21 @@ searchInput.addEventListener("input", (event) => {
   let result = data.filter(
     (post) => post.title.includes(query) || post.body.includes(query)
   );
-  listData(result);
+  console.log("result", result);
+  if (result.length > 0) {
+    listData(result);
+  } else {
+    const listContainer = document.querySelector(".list");
+    listContainer.innerHTML =
+      "<div class='notFound'><img src='./john-travolta.gif'/><h2>Result Not Found :(</h2><p>Whoops... we couldn't find what you're looking for</p></div>";
+  }
+
   console.log(result);
+});
+
+searchClearBtn.addEventListener("click", () => {
+  searchInput.value = "";
+  searchInput.focus();
 });
 
 const deletePost = (element) => {
